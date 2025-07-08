@@ -5,14 +5,14 @@ import jakarta.validation.constraints.NotNull;
 public class CategoryDeleteRequestDTO {
 
 	@NotNull(message ="ID field cannot be empty")
-	private Long ID;
+	private Long id;
 
 	public Long getID() {
-		return ID;
+		return id;
 	}
 
 	public void setID(Long iD) {
-		ID = iD;
+		id = iD;
 	}
 	
 	

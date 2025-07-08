@@ -5,7 +5,7 @@ import java.util.UUID;
 
 
 public class ProductShortResponseDTO {
-	
+		private String productName; 
 	 	private UUID storeId;
 	    private UUID productId;
 	    private int x;
@@ -13,6 +13,13 @@ public class ProductShortResponseDTO {
 	    private int quantity;
 	    private int restockThreshold;
 	    private Timestamp lastRestocked;
+	    
+		public String getProductName() {
+			return productName;
+		}
+		public void setProductName(String productName) {
+			this.productName = productName;
+		}
 		public UUID getStoreId() {
 			return storeId;
 		}

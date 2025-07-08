@@ -33,9 +33,9 @@ public class StoreController {
     }
 
     @PostMapping("/name")
-    public ResponseEntity<ApiResponse<StoreResponseDTO>> getStoreByName(@RequestBody @Valid StoreByNameRequestDTO request) {
+    public ResponseEntity<ApiResponse<List<StoreResponseDTO>>> getStoreByName(@RequestBody @Valid StoreByNameRequestDTO request) {
         try {
-            StoreResponseDTO store = storeService.getStoreByName(request);
+            List<StoreResponseDTO> store = storeService.getStoreByName(request);
             return ResponseEntity.ok(ApiResponse.success("Store found by name", store));
         } catch (ResponseStatusException e) {
             return new ResponseEntity<>(ApiResponse.failure(e.getReason()), e.getStatusCode());

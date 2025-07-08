@@ -6,6 +6,7 @@ import com.Guiderr.v1.model.dto.response.StoreShortResponseDTO;
 import com.Guiderr.v1.service.StoreInventoryService;
 import com.Guiderr.v1.utils.ApiResponse;
 
+import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 
 import java.util.List;

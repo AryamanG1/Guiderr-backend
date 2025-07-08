@@ -14,6 +14,8 @@ import com.Guiderr.v1.model.dto.request.*;
 import com.Guiderr.v1.model.dto.response.*;
 import com.Guiderr.v1.repository.*;
 
+import jakarta.transaction.Transactional;
+
 @Service
 public class StoreInventoryServiceImpl implements StoreInventoryService {
 
@@ -35,6 +37,7 @@ public class StoreInventoryServiceImpl implements StoreInventoryService {
     }
 
     @Override
+    @Transactional
     public List<ProductShortResponseDTO> getStoreProducts(ProductsByStoreIdRequestDTO request) {
         logger.trace("Entering getStoreProducts with store ID: {}", request.getStoreID());
 
@@ -159,6 +162,7 @@ public class StoreInventoryServiceImpl implements StoreInventoryService {
     }
 
     @Override
+    @Transactional
     public ProductShortResponseDTO findProductBySkuInStore(ProductsBySkuInStoreRequestDTO request) {
         logger.trace("Entering findProductBySkuInStore for store ID: {}, SKU: {}", request.getStoreId(), request.getSku());
 
@@ -186,6 +190,7 @@ public class StoreInventoryServiceImpl implements StoreInventoryService {
     }
 
     @Override
+    @Transactional
     public List<ProductShortResponseDTO> findProductByNameInStore(ProductsByNameInStoreRequestDTO request) {
         logger.trace("Entering findProductByNameInStore for store ID: {}, name: {}", request.getStoreId(), request.getName());
 
@@ -212,6 +217,7 @@ public class StoreInventoryServiceImpl implements StoreInventoryService {
     }
 
     @Override
+    @Transactional
     public List<ProductShortResponseDTO> findProductByBrandInStore(ProductsByBrandInStoreRequestDTO request) {
         logger.trace("Entering findProductByBrandInStore for store ID: {}, brand: {}", request.getStoreId(), request.getBrand());
 
@@ -238,6 +244,7 @@ public class StoreInventoryServiceImpl implements StoreInventoryService {
     }
 
     @Override
+    @Transactional
     public List<ProductShortResponseDTO> findProductByPriceRangeInStore(ProductsByPriceRangeInStoreRequestDTO request) {
         logger.trace("Entering findProductByPriceRangeInStore for store ID: {}, price range: {} - {}",
                 request.getStoreId(), request.getMinPrice(), request.getMaxPrice());

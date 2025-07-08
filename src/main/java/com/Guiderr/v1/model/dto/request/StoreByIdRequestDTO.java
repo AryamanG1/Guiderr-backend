@@ -12,14 +12,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class StoreByIdRequestDTO {
 	@NotNull(message="ID field cannot be emty")
-	private UUID ID;
+	private UUID id;
 
 	public UUID getID() {
-		return ID;
+		return id;
 	}
 
 	public void setID(UUID iD) {
-		ID = iD;
+		id = iD;
 	}
 	
 }

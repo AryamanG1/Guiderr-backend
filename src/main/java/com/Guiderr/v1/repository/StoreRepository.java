@@ -1,5 +1,6 @@
 package com.Guiderr.v1.repository;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -10,5 +11,5 @@ import com.Guiderr.v1.model.Store;
 
 @Repository
 public interface StoreRepository extends JpaRepository<Store,UUID> {
-	Optional<Store> findByName(String name);
+	List<Store> findByNameContaining(String name);
 }

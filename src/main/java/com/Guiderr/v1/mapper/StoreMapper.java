@@ -11,7 +11,7 @@ public class StoreMapper {
 
 	public static StoreResponseDTO toResponseDTO(Store store) {
         StoreResponseDTO dto = new StoreResponseDTO();
-
+        dto.setStoreId(store.getID());
         dto.setName(store.getName());
         dto.setLocation(store.getLocation());
         dto.setLength(store.getLength());

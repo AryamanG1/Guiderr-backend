@@ -1,6 +1,8 @@
 package com.Guiderr.v1.model.dto.response;
 
 import java.sql.Timestamp;
+import java.util.UUID;
+
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
@@ -8,12 +10,20 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class StoreResponseDTO {
+	private UUID storeId;
 	private String name;
 	private String location;
 	private Long length;
 	private Long width;
 	private int gridSize;
 	private Timestamp createdAt;
+	
+	public UUID getStoreId() {
+		return storeId;
+	}
+	public void setStoreId(UUID storeId) {
+		this.storeId = storeId;
+	}
 	public String getName() {
 		return name;
 	}

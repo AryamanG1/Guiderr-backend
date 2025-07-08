@@ -28,6 +28,7 @@ public class StoreInventoryMapper {
 
 	public ProductShortResponseDTO toResponseDTO(StoreInventory storeInventory) {
 		ProductShortResponseDTO response = new ProductShortResponseDTO();
+		response.setProductName(storeInventory.getProduct().getName());
 		response.setProductId(storeInventory.getProduct().getID());
 		response.setStoreId(storeInventory.getStore().getID());
 		response.setLastRestocked(storeInventory.getLastRestocked());
@@ -59,6 +60,8 @@ public class StoreInventoryMapper {
 		key.setStoreID(request.getStoreId());
 		
 		storeInventory.setID(key);
+		storeInventory.setProduct(product);
+		storeInventory.setStore(store);
 		storeInventory.setRestockThreshold(request.getRestockThreshold());
 		storeInventory.setQuantity(request.getQuantity());
 		storeInventory.setX(request.getX());

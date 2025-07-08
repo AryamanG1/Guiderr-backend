@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 public class ProductResponseDTO {
+	private UUID id;
     private String sku;
     private String name;
     private String description;
@@ -19,6 +20,14 @@ public class ProductResponseDTO {
     private Timestamp createdAt;
     private Long price;
     
+    
+    
+	public UUID getId() {
+		return id;
+	}
+	public void setId(UUID id) {
+		this.id = id;
+	}
 	public String getSku() {
 		return sku;
 	}

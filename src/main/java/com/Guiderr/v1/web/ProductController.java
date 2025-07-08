@@ -48,6 +48,7 @@ public class ProductController {
     }
 
     @PostMapping("/product/sku")
+    
     public ResponseEntity<ApiResponse<ProductResponseDTO>> getProductBySKU(@RequestBody @Valid ProductsBySkuRequestDTO request) {
         try {
             ProductResponseDTO prod = productService.getProductBySku(request);

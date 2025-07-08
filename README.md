@@ -75,110 +75,75 @@ http://localhost:8080/swagger-ui.html
 
 ## 🔗 API Endpoints
 
-### 🏬 Store Controller
+### 📁 Category Endpoints
 
-| Method | Endpoint              | Description                     |
-|--------|-----------------------|---------------------------------|
-| PUT    | `/api/store`          | Update a store                  |
-| POST   | `/api/store`          | Create a new store              |
-| DELETE | `/api/store`          | Delete a store                  |
-| POST   | `/api/store/name`     | Get store by name               |
-| POST   | `/api/store/id`       | Get store by ID                 |
-| GET    | `/api/store/all`      | Get all stores                  |
+| Method | Endpoint           | Description               |
+| ------ | ------------------ | ------------------------- |
+| POST   | `/category`        | Create a new category     |
+| POST   | `/category/id`     | Get category by ID        |
+| PUT    | `/category`        | Update category details   |
+| DELETE | `/category`        | Delete category by ID     |
+| GET    | `/categories`      | Get all categories        |
+| POST   | `/categories/name` | Search categories by name |
 
----
 
-### 📦 Store Inventory Controller
 
-| Method | Endpoint                                      | Description                          |
-|--------|-----------------------------------------------|--------------------------------------|
-| POST   | `/api/store-inventory`                        | Add product to store                 |
-| DELETE | `/api/store-inventory`                        | Remove product from store            |
-| PUT    | `/api/store-inventory/quantity`               | Update product quantity              |
-| PUT    | `/api/store-inventory/restock-threshold`      | Update restock threshold             |
-| POST   | `/api/store-inventory/products`               | Get products in a store              |
-| POST   | `/api/store-inventory/stores`                 | Get stores having a product          |
-| POST   | `/api/store-inventory/filter/id`              | Filter product by ID in store        |
-| POST   | `/api/store-inventory/filter/sku`             | Filter product by SKU in store       |
-| POST   | `/api/store-inventory/filter/name`            | Filter products by name in store     |
-| POST   | `/api/store-inventory/filter/brand`           | Filter products by brand in store    |
-| POST   | `/api/store-inventory/filter/price`           | Filter products by price range       |
 
----
+### 🏬 Store Endpoints
+| Method | Endpoint      | Description           |
+| ------ | ------------- | --------------------- |
+| POST   | `/store`      | Create a new store    |
+| POST   | `/store/id`   | Get store by ID       |
+| POST   | `/store/name` | Search stores by name |
+| PUT    | `/store`      | Update store details  |
+| DELETE | `/store`      | Delete store by ID    |
+| GET    | `/store/all`  | Get all stores        |
 
-### 📦 Product Controller Endpoints
 
-| Method | Endpoint             | Description                        |
-|--------|----------------------|------------------------------------|
-| POST   | `/api/product`       | Get product by ID                  |
-| PUT    | `/api/product`       | Update product                     |
-| POST   | `/api/product`       | Create a new product               |
-| DELETE | `/api/product`       | Delete product                     |
-| GET    | `/api/products`      | Get all products                   |
-| POST   | `/api/product/sku`   | Get product by SKU                 |
-| POST   | `/api/product/price` | Get products by price range        |
-| POST   | `/api/product/name`  | Get products by name               |
-| POST   | `/api/product/brand` | Get products by brand              |
 
----
 
-### 🏷️ Category Controller Endpoints
+### 📦 Product Endpoints
+| Method | Endpoint         | Description                    |
+| ------ | ---------------- | ------------------------------ |
+| POST   | `/product`       | Create a new product           |
+| DELETE | `/product`       | Delete product by ID           |
+| GET    | `/product`       | Get all products               |
+| POST   | `/product/id`    | Get product by ID              |
+| POST   | `/product/sku`   | Get product by SKU             |
+| POST   | `/product/name`  | Search products by name        |
+| POST   | `/product/brand` | Search products by brand       |
+| POST   | `/product/price` | Filter products by price range |
 
-| Method | Endpoint                  | Description                        |
-|--------|---------------------------|------------------------------------|
-| POST   | `/api/category`           | Get category by ID                 |
-| PUT    | `/api/category`           | Update category                    |
-| POST   | `/api/category`           | Create a new category              |
-| DELETE | `/api/category`           | Delete category                    |
-| GET    | `/api/categories`         | Get all categories                 |
-| POST   | `/api/categories/name`    | Get categories by name             |
 
----
 
----
 
-## 🧪 Sample Requests & Responses
-## Store-Controller
-![alt text](image-1.png)
-![alt text](image-2.png)
-![alt text](image-3.png)
-![alt text](image-4.png)
-![alt text](image-5.png)
-![alt text](image-6.png)
+### 🧮 Store Inventory Endpoints
+| Method | Endpoint                             | Description                                     |
+| ------ | ------------------------------------ | ----------------------------------------------- |
+| POST   | `/store-inventory`                   | Add product to a store                          |
+| DELETE | `/store-inventory`                   | Remove product from a store                     |
+| PUT    | `/store-inventory/quantity`          | Update product quantity in a store              |
+| PUT    | `/store-inventory/restock-threshold` | Update restock threshold for a product in store |
+| POST   | `/store-inventory/products`          | Get all products in a given store               |
+| POST   | `/store-inventory/stores`            | Get all stores that stock a given product       |
 
-## Store-Inventory-Controller
-![alt text](image-7.png)
-![alt text](image-8.png)
-![alt text](image-9.png)
-![alt text](image-10.png)
-![alt text](image-11.png)
-![alt text](image-12.png)
-![alt text](image-13.png)
-![alt text](image-14.png)
-![alt text](image-15.png)
-![alt text](image-16.png)
-![alt text](image-17.png)
 
-## Product-Controller
-![alt text](image-18.png)
-![alt text](image-19.png)
-![alt text](image-20.png)
-![alt text](image-21.png)
-![alt text](image-22.png)
-![alt text](image-23.png)
-![alt text](image-24.png)
-![alt text](image-25.png)
-![alt text](image-26.png)
 
-## Category-Controller
-![alt text](image-27.png)
-![alt text](image-28.png)
-![alt text](image-29.png)
-![alt text](image-30.png)
-![alt text](image-31.png)
-![alt text](image-32.png)
+### 🔍 Inventory Filters
+| Method | Endpoint                        | Description                               |
+| ------ | ------------------------------- | ----------------------------------------- |
+| POST   | `/store-inventory/filter/id`    | Get inventory by storeId and productId    |
+| POST   | `/store-inventory/filter/name`  | Filter products in a store by name        |
+| POST   | `/store-inventory/filter/sku`   | Filter products in a store by SKU         |
+| POST   | `/store-inventory/filter/brand` | Filter products in a store by brand       |
+| POST   | `/store-inventory/filter/price` | Filter products in a store by price range |
 
 ---
+
+## Endpoints JSON
+
+[Postman Collection Link](https://.postman.co/workspace/My-Workspace~01d841cf-b95c-4d05-88da-04b153cf5ce2/collection/32157070-e53c1213-108a-4132-a078-983ef9c556f0?action=share&creator=32157070)
+
 
 ## 🧰 Development Notes
 

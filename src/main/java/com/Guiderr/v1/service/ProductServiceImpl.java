@@ -19,6 +19,9 @@ import com.Guiderr.v1.model.dto.request.ProductsByPriceRequestDTO;
 import com.Guiderr.v1.model.dto.request.ProductsBySkuRequestDTO;
 import com.Guiderr.v1.model.dto.response.ProductResponseDTO;
 import com.Guiderr.v1.repository.ProductRepository;
+
+import jakarta.transaction.Transactional;
+
 import com.Guiderr.v1.mapper.ProductMapper;
 
 
@@ -49,6 +52,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    @Transactional
 	public ProductResponseDTO getProductBySku(ProductsBySkuRequestDTO request) {
 		Product product = productRepository.findProductBySku(request.getSku()).orElseThrow(() -> new RuntimeException("SKU is invalid"));
 		return productMapper.toResponseDTO(product);
@@ -56,6 +60,7 @@ public class ProductServiceImpl implements ProductService {
 	}
 
     @Override
+    @Transactional
     public List<ProductResponseDTO> getProductsByName(ProductsByNameRequestDTO request) {
         logger.trace("Entering getProductsByName with name: {}", request.getName());
         List<Product> products = productRepository.findByNameContaining(request.getName());
@@ -68,6 +73,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    @Transactional
     public List<ProductResponseDTO> getProductsByBrand(ProductsByBrandRequestDTO request) {
         logger.trace("Entering getProductsByBrand with brand: {}", request.getBrand());
         List<Product> products = productRepository.findProductByBrand(request.getBrand());
@@ -92,6 +98,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    @Transactional
     public List<ProductResponseDTO> getProductsByPrice(ProductsByPriceRequestDTO request) {
         logger.trace("Entering getProductsByPrice with range: {} - {}", request.getLowerPrice(), request.getUpperPrice());
         List<Product> products = productRepository.findByPriceBetween(request.getLowerPrice(), request.getUpperPrice());

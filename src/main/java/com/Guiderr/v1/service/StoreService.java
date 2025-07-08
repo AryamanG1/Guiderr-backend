@@ -12,7 +12,7 @@ import com.Guiderr.v1.model.dto.response.StoreResponseDTO;
 public interface StoreService {
 			
 	StoreResponseDTO getStoreByID(StoreByIdRequestDTO request);
-	StoreResponseDTO getStoreByName(StoreByNameRequestDTO request);
+	List<StoreResponseDTO> getStoreByName(StoreByNameRequestDTO request);
 	List<StoreResponseDTO> getAllStores();
 	StoreResponseDTO createStoreDetails(StoreCreateRequestDTO request);
 	StoreResponseDTO updateStoreDetails(StoreUpdateRequestDTO request);

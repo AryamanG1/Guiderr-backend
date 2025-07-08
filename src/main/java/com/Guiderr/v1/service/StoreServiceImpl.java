@@ -50,18 +50,18 @@ public class StoreServiceImpl implements StoreService {
 	}
 
 	@Override
-	public StoreResponseDTO getStoreByName(StoreByNameRequestDTO request) {
+	public List<StoreResponseDTO> getStoreByName(StoreByNameRequestDTO request) {
 		logger.trace("Entered getStoreByName() with name: {}", request.getName());
 
-		Store store = storeRepository.findByName(request.getName())
-			.orElseThrow(() -> {
-				logger.error("Store name '{}' not found", request.getName());
-				return new RuntimeException("Store Name is invalid");
-			});
+		List<Store> stores = storeRepository.findByNameContaining(request.getName());
 
-		logger.debug("Found store with name: {}", store.getName());
-		logger.trace("Exiting getStoreByName()");
-		return StoreMapper.toResponseDTO(store);
+		logger.debug("Retrieved {} stores", stores.size());
+		List<StoreResponseDTO> responseList = stores.stream()
+			.map(StoreMapper::toResponseDTO)
+			.collect(Collectors.toList());
+
+		logger.trace("Exiting getAllStores()");
+		return responseList;
 	}
 
 	@Override

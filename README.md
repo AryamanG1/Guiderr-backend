@@ -142,6 +142,15 @@ http://localhost:8080/swagger-ui.html
 
 ## Endpoints JSON
 
+# 📥 How to Import the Postman Collection
+
+You can test all API endpoints using the provided Postman collection.
+- Open Postman.
+- Click on "Import" in the top-left corner.
+- Select the "Link" tab.
+- Paste the following URL:
+
+
 [Postman Collection Link](https://.postman.co/workspace/My-Workspace~01d841cf-b95c-4d05-88da-04b153cf5ce2/collection/32157070-e53c1213-108a-4132-a078-983ef9c556f0?action=share&creator=32157070)
 
 

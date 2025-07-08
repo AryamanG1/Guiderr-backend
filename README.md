@@ -21,9 +21,9 @@ A Spring Boot + PostgreSQL REST API for managing stores, products, and inventory
 ---
 
 
-## 🛠️ Getting Started
+## Getting Started
 
-### 📦 Prerequisites
+### Prerequisites
 
 - Java 17+
 - Maven
@@ -31,7 +31,7 @@ A Spring Boot + PostgreSQL REST API for managing stores, products, and inventory
 
 ---
 
-### 🧱 Database Setup
+### Database Setup
 
 Create the database and user:
 ```
@@ -46,7 +46,7 @@ spring.datasource.password=root
 
 ---
 
-### ▶️ Running the App
+### Running the App
 
 #### With Maven
 
@@ -63,7 +63,7 @@ java -jar target/guiderr-1.0.0.jar
 
 ---
 
-## 📚 API Documentation
+## API Documentation
 
 Once the app is running, access the Swagger UI:
 
@@ -73,9 +73,9 @@ http://localhost:8080/swagger-ui.html
 
 ---
 
-## 🔗 API Endpoints
+## API Endpoints
 
-### 📁 Category Endpoints
+### Category Endpoints
 
 | Method | Endpoint           | Description               |
 | ------ | ------------------ | ------------------------- |
@@ -89,7 +89,7 @@ http://localhost:8080/swagger-ui.html
 
 
 
-### 🏬 Store Endpoints
+### Store Endpoints
 | Method | Endpoint      | Description           |
 | ------ | ------------- | --------------------- |
 | POST   | `/store`      | Create a new store    |
@@ -102,7 +102,7 @@ http://localhost:8080/swagger-ui.html
 
 
 
-### 📦 Product Endpoints
+### Product Endpoints
 | Method | Endpoint         | Description                    |
 | ------ | ---------------- | ------------------------------ |
 | POST   | `/product`       | Create a new product           |
@@ -117,7 +117,7 @@ http://localhost:8080/swagger-ui.html
 
 
 
-### 🧮 Store Inventory Endpoints
+### Store Inventory Endpoints
 | Method | Endpoint                             | Description                                     |
 | ------ | ------------------------------------ | ----------------------------------------------- |
 | POST   | `/store-inventory`                   | Add product to a store                          |
@@ -129,7 +129,7 @@ http://localhost:8080/swagger-ui.html
 
 
 
-### 🔍 Inventory Filters
+### Inventory Filters
 | Method | Endpoint                        | Description                               |
 | ------ | ------------------------------- | ----------------------------------------- |
 | POST   | `/store-inventory/filter/id`    | Get inventory by storeId and productId    |
@@ -142,7 +142,7 @@ http://localhost:8080/swagger-ui.html
 
 ## Endpoints JSON
 
-# 📥 How to Import the Postman Collection
+### How to Import the Postman Collection
 
 You can test all API endpoints using the provided Postman collection.
 - Open Postman.
@@ -154,7 +154,7 @@ You can test all API endpoints using the provided Postman collection.
 [Postman Collection Link](https://.postman.co/workspace/My-Workspace~01d841cf-b95c-4d05-88da-04b153cf5ce2/collection/32157070-e53c1213-108a-4132-a078-983ef9c556f0?action=share&creator=32157070)
 
 
-## 🧰 Development Notes
+## Development Notes
 
 - Uses `ApiResponse<T>` wrapper for all responses
 - DTOs are validated using `@Valid` and Jakarta Bean Validation

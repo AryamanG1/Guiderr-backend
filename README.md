@@ -17,7 +17,7 @@ A Spring Boot + PostgreSQL REST API for managing stores, products, and inventory
 
 ## UML Model
 
-![alt text](image.png)
+![alt text](ModelUML.png)
 ---
 
 

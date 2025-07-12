@@ -90,14 +90,17 @@ http://localhost:8080/swagger-ui.html
 
 
 ### Store Endpoints
-| Method | Endpoint      | Description           |
-| ------ | ------------- | --------------------- |
-| POST   | `/store`      | Create a new store    |
-| POST   | `/store/id`   | Get store by ID       |
-| POST   | `/store/name` | Search stores by name |
-| PUT    | `/store`      | Update store details  |
-| DELETE | `/store`      | Delete store by ID    |
-| GET    | `/store/all`  | Get all stores        |
+| Method | Endpoint           | Description           |
+| ------ | ------------------ | --------------------- |
+| POST   | `/store`           | Create a new store    |
+| POST   | `/store/id`        | Get store by ID       |
+| POST   | `/store/name`      | Search stores by name |
+| PUT    | `/store`           | Update store details  |
+| DELETE | `/store`           | Delete store by ID    |
+| GET    | `/store/all`       | Get all stores        |
+| POST   | `/store/grid`      | Get all stores        |
+| POST   | `/store/grid-new`  | Get all stores        |
+
 
 
 

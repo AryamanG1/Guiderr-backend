@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class StoreByIdRequestDTO {
+	
 	@NotNull(message="ID field cannot be emty")
 	private UUID id;
 

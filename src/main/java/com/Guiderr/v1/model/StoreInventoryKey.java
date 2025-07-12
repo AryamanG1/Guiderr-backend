@@ -10,8 +10,6 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 @Embeddable
-@NoArgsConstructor
-@AllArgsConstructor
 public class StoreInventoryKey implements Serializable {
 	
 	@Column(name="store_id")

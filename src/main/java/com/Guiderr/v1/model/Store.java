@@ -9,6 +9,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -43,6 +44,10 @@ public class Store {
 	@CreationTimestamp
 	@Column(name="created_at",updatable=false)
 	private Timestamp createdata;
+	
+	@Lob
+	@Column(name="store_grid")
+	private String grid;
 
 	
 	public UUID getID() {
@@ -99,6 +104,14 @@ public class Store {
 
 	public void setCreatedata(Timestamp createdata) {
 		this.createdata = createdata;
+	}
+
+	public String getGrid() {
+		return grid;
+	}
+
+	public void setGrid(String grid) {
+		this.grid = grid;
 	}
 	
 	

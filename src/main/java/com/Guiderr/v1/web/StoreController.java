@@ -81,4 +81,24 @@ public class StoreController {
             return new ResponseEntity<>(ApiResponse.failure(e.getReason()), e.getStatusCode());
         }
     }
+    
+    @PostMapping("/grid")
+    public ResponseEntity<ApiResponse<GridResponseDTO>> getStoreGrid(@RequestBody @Valid StoreByIdRequestDTO request){
+    	try {
+            GridResponseDTO grid = storeService.getStoreGrid(request);
+            return ResponseEntity.ok(ApiResponse.success("Grid found: ", grid));
+        } catch (ResponseStatusException e) {
+            return new ResponseEntity<>(ApiResponse.failure(e.getReason()), e.getStatusCode());
+        }
+    }
+    
+    @PostMapping("/grid-new")
+    public ResponseEntity<ApiResponse<StoreResponseDTO>> setStoreGrid(@RequestBody @Valid GridRequestDTO request){
+    	try {
+            StoreResponseDTO store = storeService.createStoreGrid(request);
+            return ResponseEntity.ok(ApiResponse.success("Grid found: ", store));
+        } catch (ResponseStatusException e) {
+            return new ResponseEntity<>(ApiResponse.failure(e.getReason()), e.getStatusCode());
+        }
+    }
 }

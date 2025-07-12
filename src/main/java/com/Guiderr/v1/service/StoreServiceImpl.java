@@ -9,11 +9,13 @@ import org.springframework.stereotype.Service;
 
 import com.Guiderr.v1.mapper.StoreMapper;
 import com.Guiderr.v1.model.Store;
+import com.Guiderr.v1.model.dto.request.GridRequestDTO;
 import com.Guiderr.v1.model.dto.request.StoreByIdRequestDTO;
 import com.Guiderr.v1.model.dto.request.StoreByNameRequestDTO;
 import com.Guiderr.v1.model.dto.request.StoreCreateRequestDTO;
 import com.Guiderr.v1.model.dto.request.StoreDeleteByIdRequestDTO;
 import com.Guiderr.v1.model.dto.request.StoreUpdateRequestDTO;
+import com.Guiderr.v1.model.dto.response.GridResponseDTO;
 import com.Guiderr.v1.model.dto.response.StoreResponseDTO;
 import com.Guiderr.v1.repository.StoreRepository;
 
@@ -123,5 +125,34 @@ public class StoreServiceImpl implements StoreService {
 		logger.warn("Deleted store with ID: {}", store.getID());
 		logger.trace("Exiting deleteStoreDetails()");
 		return StoreMapper.toResponseDTO(store);
+	}
+
+	@Override
+	public GridResponseDTO getStoreGrid(StoreByIdRequestDTO request) {
+		logger.trace("Entered getStoreGrid() with ID: {}", request.getID());
+		Store store = storeRepository.findById(request.getID())
+				.orElseThrow(() -> {
+					logger.error("Store ID {} is invalid", request.getID());
+					return new RuntimeException("Store ID is invalid");
+				});
+		
+		logger.trace("Exited getStoreGrid() with ID: {}", request.getID());		
+		return new GridResponseDTO(store.getGrid());
+	}
+
+	@Override
+	public StoreResponseDTO createStoreGrid(GridRequestDTO request) {
+		String grid = request.getGrid();
+		Store store = storeRepository.findById(request.getId())
+				.orElseThrow(() -> {
+					logger.error("Store ID {} is invalid", request.getId());
+					return new RuntimeException("Store ID is invalid");
+				});
+		
+		store.setGrid(grid);
+		storeRepository.save(store);
+		
+		return StoreMapper.toResponseDTO(store);
+		
 	}
 }
